@@ -4,6 +4,11 @@ const purchaseItems = () => {
 
 const addToShoppingList = (item) => {
   console.log("Adding", item);
+  let listItem = document.createElement("li");
+  let shoppingList = document.getElementById("shoppingList");
+
+  listItem.textContent = item;
+  shoppingList.appendChild(listItem);
 };
 
 let tables = document.getElementsByTagName("td");
