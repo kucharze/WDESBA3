@@ -12,7 +12,7 @@ setTimeout(() => {
       console.log("Working");
     });
   }
-}, 1000);
+}, 500);
 
 // document.getElementById("ShoppingItems").addEventListener("click", (e) => {
 //   console.log("Hello");
