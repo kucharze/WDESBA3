@@ -9,11 +9,7 @@ setTimeout(() => {
   for (let i = 0; i < 12; i++) {
     console.log("Adding event listener");
     tables[i].addEventListener("click", (e) => {
-      console.log("Working");
+      console.log("Working", e.target.classList[0]);
     });
   }
 }, 500);
-
-// document.getElementById("ShoppingItems").addEventListener("click", (e) => {
-//   console.log("Hello");
-// });
