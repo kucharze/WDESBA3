@@ -4,6 +4,10 @@ const purchaseItems = () => {
 
 const addToShoppingList = (item) => {
   console.log("Adding", item);
+  if (item === undefined) {
+    alert("Error adding item.  Please click on a picture");
+    return;
+  }
   let listItem = document.createElement("li");
   let shoppingList = document.getElementById("shoppingList");
 
