@@ -11,6 +11,9 @@ const purchaseItems = () => {
       total += 2;
     }
     console.log("Your total is $", total);
+
+    let tot = document.querySelector(".total");
+    tot.innerHTML = "Your total is $" + total;
   }
 };
 
