@@ -1,5 +1,17 @@
 const purchaseItems = () => {
   console.log("Purchasing items");
+  let shoppingList = document.getElementById("shoppingList").children;
+  console.log(shoppingList);
+  let total = 0;
+
+  if (shoppingList.length === 0) {
+    alert("Shopping list is empty");
+  } else {
+    for (let i = 0; i < shoppingList.length; i++) {
+      total += 2;
+    }
+    console.log("Your total is $", total);
+  }
 };
 
 const addToShoppingList = (item) => {
@@ -26,4 +38,9 @@ setTimeout(() => {
       addToShoppingList(e.target.classList[0]);
     });
   }
-}, 500);
+}, 200);
+
+document.querySelector(".makePurchase").addEventListener("click", () => {
+  console.log("Purchasing");
+  purchaseItems();
+});
