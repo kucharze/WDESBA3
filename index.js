@@ -116,8 +116,12 @@ setTimeout(() => {
     }
 
     localStorage.setItem("email", userForm.elements["email"].value);
-    localStorage.setItem("password", userForm.elements["email"].value);
+    localStorage.setItem("password", userForm.elements["password"].value);
     alert("Successful login");
+
+    let signin = document.getElementById("signedin");
+    signin.innerHTML = "Signed in: Yes";
+    signin.setAttribute("Signedin", "True");
   });
 
   document.getElementById("Login").addEventListener("submit", (e) => {
@@ -125,7 +129,10 @@ setTimeout(() => {
     let Loginform = document.getElementById("Login");
 
     let email = localStorage.getItem("email");
-    let password = localStorage.getItem("Password");
+    let password = localStorage.getItem("password");
+
+    console.log(email);
+    console.log(password);
 
     if (Loginform.elements["email"].value !== email) {
       alert("Emails do not match");
@@ -138,6 +145,9 @@ setTimeout(() => {
     }
 
     alert("Successfully logged in ");
+    let signin = document.getElementById("signedin");
+    signin.innerHTML = "Signed in: Yes";
+    signin.setAttribute("Signedin", "True");
   });
 
   document.querySelector(".pay").addEventListener("click", purchase);
