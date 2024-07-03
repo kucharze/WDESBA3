@@ -69,11 +69,6 @@ const removeFromList = () => {
 let tables = document.getElementsByTagName("td");
 console.log(tables);
 
-function hello(e) {
-  e.preventDefault();
-  console.log("Submiting information");
-}
-
 setTimeout(() => {
   for (let i = 0; i < 12; i++) {
     console.log("Adding event listener");
@@ -90,6 +85,7 @@ setTimeout(() => {
 
   document.getElementById("Signup").addEventListener("submit", (e) => {
     console.log("Submiting information");
+    e.preventDefault();
     hello(e);
   });
 
