@@ -45,3 +45,12 @@ input {
 .pay {
   display: none;
 }
+.mainDisplay {
+  display: flex;
+  justify-content: space-between;
+}
+.Items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
