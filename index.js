@@ -1,19 +1,22 @@
 const purchaseItems = () => {
   console.log("Purchasing items");
-  let shoppingList = document.getElementById("shoppingList").children;
+  let shoppingList = document.getElementById("shoppingList");
   console.log(shoppingList);
   let total = 0;
 
-  if (shoppingList.length === 0) {
+  if (shoppingList.children.length === 0) {
     alert("Shopping list is empty");
   } else {
-    for (let i = 0; i < shoppingList.length; i++) {
+    for (let i = 0; i < shoppingList.children.length; i++) {
       total += 2;
     }
     console.log("Your total is $", total);
 
     let tot = document.querySelector(".total");
     tot.innerHTML = "Your total is $" + total;
+    while (shoppingList.lastChild) {
+      shoppingList.removeChild(shoppingList.lastChild);
+    }
   }
 };
 
