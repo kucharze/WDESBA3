@@ -109,14 +109,15 @@ setTimeout(() => {
     }
 
     if (
-      userForm.elements["Confirm"].value === userForm.elements["password"].value
+      userForm.elements["Confirm"].value !== userForm.elements["password"].value
     ) {
-      window.alert("Email needs a value");
+      window.alert("Passwords do not match");
       return;
     }
 
     localStorage.setItem("email", userForm.elements["email"].value);
     localStorage.setItem("password", userForm.elements["email"].value);
+    alert("Successful login");
   });
 
   document.getElementById("Login").addEventListener("submit", (e) => {
