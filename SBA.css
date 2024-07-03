@@ -28,6 +28,9 @@ body {
 .shoppinglist {
   width: 300px;
 }
+.total {
+  font-size: 25px;
+}
 button {
   font-size: 25px;
   margin: 10px;
