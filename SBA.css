@@ -41,3 +41,6 @@ input {
   text-align: center;
   width: 250px;
 }
+.pay {
+  display: none;
+}
