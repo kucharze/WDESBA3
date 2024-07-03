@@ -14,3 +14,7 @@ manipulating the Document Object Model.
 ### The ability to add and remove items from the cart
 
 ### Changes to the display as you make a purchase
+
+### Logic for storing a username and password in local storage
+
+### View for if you are logged in or not, with cloneNode() functionality
