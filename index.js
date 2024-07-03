@@ -1,3 +1,5 @@
+let userForm = document.getElementById("Signup");
+
 const purchaseItems = () => {
   console.log("Purchasing items");
   let shoppingList = document.getElementById("shoppingList");
