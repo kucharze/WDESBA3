@@ -120,8 +120,16 @@ setTimeout(() => {
     alert("Successful login");
 
     let signin = document.getElementById("signedin");
-    signin.innerHTML = "Signed in: Yes";
-    signin.setAttribute("Signedin", "True");
+
+    let copy = signin.cloneNode(true);
+    copy.innerHTML = "Signed in: Yes";
+    copy.setAttribute("Signedin", "True");
+
+    let status = document.querySelector(".loginstatus");
+    while (status.lastChild) {
+      status.removeChild(status.lastChild);
+    }
+    status.appendChild(copy);
   });
 
   document.getElementById("Login").addEventListener("submit", (e) => {
@@ -146,8 +154,18 @@ setTimeout(() => {
 
     alert("Successfully logged in ");
     let signin = document.getElementById("signedin");
-    signin.innerHTML = "Signed in: Yes";
-    signin.setAttribute("Signedin", "True");
+
+    let copy = signin.cloneNode(true);
+    copy.innerHTML = "Signed in: Yes";
+    copy.setAttribute("Signedin", "True");
+
+    let status = document.querySelector(".loginstatus");
+    console.log(status.children);
+    while (status.lastChild) {
+      status.removeChild(status.lastChild);
+    }
+
+    status.appendChild(copy);
   });
 
   document.querySelector(".pay").addEventListener("click", purchase);
