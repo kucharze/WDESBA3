@@ -48,6 +48,11 @@ const removeFromList = () => {
 let tables = document.getElementsByTagName("td");
 console.log(tables);
 
+function hello(e) {
+  e.preventDefault();
+  console.log("Submiting information");
+}
+
 setTimeout(() => {
   for (let i = 0; i < 12; i++) {
     console.log("Adding event listener");
@@ -56,9 +61,15 @@ setTimeout(() => {
       addToShoppingList(e.target.classList[0]);
     });
   }
-}, 200);
 
-document.querySelector(".makePurchase").addEventListener("click", () => {
-  console.log("Purchasing");
-  purchaseItems();
-});
+  document.querySelector(".makePurchase").addEventListener("click", () => {
+    console.log("Purchasing");
+    purchaseItems();
+  });
+
+  console.log(document.getElementById("Signup"));
+  document.getElementById("Signup").addEventListener("submit", (e) => {
+    console.log("Submiting information");
+    hello(e);
+  });
+}, 200);
