@@ -1,3 +1,5 @@
+let totalPrice = 0;
+
 const purchaseItems = () => {
   console.log("Purchasing items");
   let shoppingList = document.getElementById("shoppingList");
@@ -11,6 +13,7 @@ const purchaseItems = () => {
       total += 2;
     }
     console.log("Your total is $", total);
+    totalPrice = total;
 
     let tot = document.querySelector(".total");
     tot.style.backgroundColor = "lightgreen";
@@ -42,16 +45,24 @@ const purchase = () => {
   let buy = document.querySelector(".pay");
   let tot = document.querySelector(".total");
 
-  while (shoppingList.lastChild) {
-    shoppingList.removeChild(shoppingList.lastChild);
+  let amount = window.prompt("Enter amount");
+  console.log(typeof amount);
+
+  if (amount < totalPrice) {
+    window.alert("Not enough money");
+    return;
+  } else {
+    while (shoppingList.lastChild) {
+      shoppingList.removeChild(shoppingList.lastChild);
+    }
+    buy.style.display = "none";
+
+    tot.style.backgroundColor = "blue";
+    tot.style.color = "white";
+    tot.style.fontSize = "30px";
+
+    tot.innerHTML = "Thank you for shopping!  Have a good day!";
   }
-  buy.style.display = "none";
-
-  tot.style.backgroundColor = "blue";
-  tot.style.color = "white";
-  tot.style.fontSize = "30px";
-
-  tot.innerHTML = "Thank you for shopping!  Have a good day!";
 };
 
 const removeFromList = () => {
@@ -97,10 +108,15 @@ setTimeout(() => {
       return;
     }
 
-    if (userForm.elements["Confirm"].value === "") {
+    if (
+      userForm.elements["Confirm"].value === userForm.elements["password"].value
+    ) {
       window.alert("Email needs a value");
       return;
     }
+
+    localStorage.setItem("email", userForm.elements["email"].value);
+    localStorage.setItem("password", userForm.elements["email"].value);
   });
 
   document.querySelector(".pay").addEventListener("click", purchase);
