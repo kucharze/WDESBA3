@@ -30,6 +30,16 @@ const addToShoppingList = (item) => {
   shoppingList.appendChild(listItem);
 };
 
+const removeFromList = () => {
+  let shoppingList = document.getElementById("shoppingList");
+  if (shoppingList.children.length === 0) {
+    alert("Shopping list is empty");
+    return;
+  }
+
+  shoppingList.removeChild(shoppingList.lastChild);
+};
+
 let tables = document.getElementsByTagName("td");
 console.log(tables);
 
