@@ -15,10 +15,14 @@ const purchaseItems = () => {
     console.log("Your total is $", total);
 
     let tot = document.querySelector(".total");
+    tot.style.backgroundColor = "lightgreen";
+    tot.style.color = "black";
+    tot.style.fontSize = "20px";
+
+    let buy = document.querySelector(".pay");
     tot.innerHTML = "Your total is $" + total;
-    while (shoppingList.lastChild) {
-      shoppingList.removeChild(shoppingList.lastChild);
-    }
+
+    buy.style.display = "block";
   }
 };
 
@@ -33,6 +37,23 @@ const addToShoppingList = (item) => {
 
   listItem.textContent = item;
   shoppingList.appendChild(listItem);
+};
+
+const purchase = () => {
+  let shoppingList = document.getElementById("shoppingList");
+  let buy = document.querySelector(".pay");
+  let tot = document.querySelector(".total");
+
+  while (shoppingList.lastChild) {
+    shoppingList.removeChild(shoppingList.lastChild);
+  }
+  buy.style.display = "none";
+
+  tot.style.backgroundColor = "blue";
+  tot.style.color = "white";
+  tot.style.fontSize = "30px";
+
+  tot.innerHTML = "Thank you for shopping!  Have a good day!";
 };
 
 const removeFromList = () => {
@@ -67,9 +88,10 @@ setTimeout(() => {
     purchaseItems();
   });
 
-  console.log(document.getElementById("Signup"));
   document.getElementById("Signup").addEventListener("submit", (e) => {
     console.log("Submiting information");
     hello(e);
   });
+
+  document.querySelector(".pay").addEventListener("click", purchase);
 }, 200);
