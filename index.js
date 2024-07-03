@@ -119,5 +119,25 @@ setTimeout(() => {
     localStorage.setItem("password", userForm.elements["email"].value);
   });
 
+  document.getElementById("Login").addEventListener("submit", (e) => {
+    e.preventDefault();
+    let Loginform = document.getElementById("Login");
+
+    let email = localStorage.getItem("email");
+    let password = localStorage.getItem("Password");
+
+    if (Loginform.elements["email"].value !== email) {
+      alert("Emails do not match");
+      return;
+    }
+
+    if (Loginform.elements["password"].value !== password) {
+      alert("Passwords do not match");
+      return;
+    }
+
+    alert("Successfully logged in ");
+  });
+
   document.querySelector(".pay").addEventListener("click", purchase);
 }, 200);
