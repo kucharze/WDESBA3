@@ -1,5 +1,3 @@
-let userForm = document.getElementById("Signup");
-
 const purchaseItems = () => {
   console.log("Purchasing items");
   let shoppingList = document.getElementById("shoppingList");
@@ -7,7 +5,7 @@ const purchaseItems = () => {
   let total = 0;
 
   if (shoppingList.children.length === 0) {
-    alert("Shopping list is empty");
+    window.alert("Shopping list is empty");
   } else {
     for (let i = 0; i < shoppingList.children.length; i++) {
       total += 2;
@@ -29,7 +27,7 @@ const purchaseItems = () => {
 const addToShoppingList = (item) => {
   console.log("Adding", item);
   if (item === undefined) {
-    alert("Error adding item.  Please click on a picture");
+    window.alert("Error adding item.  Please click on a picture");
     return;
   }
   let listItem = document.createElement("li");
@@ -59,7 +57,7 @@ const purchase = () => {
 const removeFromList = () => {
   let shoppingList = document.getElementById("shoppingList");
   if (shoppingList.children.length === 0) {
-    alert("Shopping list is empty");
+    window.alert("Shopping list is empty");
     return;
   }
 
@@ -84,9 +82,25 @@ setTimeout(() => {
   });
 
   document.getElementById("Signup").addEventListener("submit", (e) => {
+    let userForm = document.getElementById("Signup");
     console.log("Submiting information");
     e.preventDefault();
-    hello(e);
+    // hello(e);
+
+    if (userForm.elements["email"].value === "") {
+      window.alert("Email needs a value");
+      return;
+    }
+
+    if (userForm.elements["password"].value === "") {
+      window.window.alert("Password needs a value");
+      return;
+    }
+
+    if (userForm.elements["Confirm"].value === "") {
+      window.alert("Email needs a value");
+      return;
+    }
   });
 
   document.querySelector(".pay").addEventListener("click", purchase);
